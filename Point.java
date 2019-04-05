@@ -1,7 +1,7 @@
 /**
   Represent a point, using Cartesian coordinates
  */
-public class Point{
+public class Point implements Comparable{
     private double xcor;
     private double ycor;
     
@@ -17,8 +17,18 @@ public class Point{
            If the math is a problem, use a simpler
            relationship, like "higher is bigger"
            and change the tests accordingly */
+		
+		if (otherObj instanceof Point){
+			Point otherObjCopy = (Point)otherObj ;
+			return Double.compare( distOr(), otherObjCopy.distOr());
+		}
+			
         return 0; // temp: all Points are One
     }
+	
+	private double distOr (){
+		return Math.sqrt(xcor * xcor + ycor * ycor);
+	}
 
     // -------- previously-written code ----------
     // constructor

@@ -3,5 +3,6 @@
   have no meaning.
  */
 
-public class IncomparableDog {
+public class IncomparableDog implements Comparable{
+
 }
